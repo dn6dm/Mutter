@@ -33,33 +33,45 @@ router.get("/posts/:postID", (req, res, next) => {
 
 // Add new comment
 router.patch("/posts/:postID/comment", (req, res, next) => {
-  Post.findByIdAndUpdate(req.params.postID, {
-    $push: {
-      comments: { body: req.body.comment, date: new Date() },
+  Post.findByIdAndUpdate(
+    req.params.postID,
+    {
+      $push: {
+        comments: { body: req.body.comment, date: new Date() },
+      },
     },
-  })
+    { new: true }
+  )
     .then((data) => res.json(data))
     .catch(next);
 });
 
 // Upvote a post
 router.patch("/posts/:postID/upvote", (req, res, next) => {
-  Post.findByIdAndUpdate(req.params.postID, {
-    $inc: {
-      votes: 1,
+  Post.findByIdAndUpdate(
+    req.params.postID,
+    {
+      $inc: {
+        votes: 1,
+      },
     },
-  })
+    { new: true }
+  )
     .then((data) => res.json(data))
     .catch(next);
 });
 
 // Downvote a post
 router.patch("/posts/:postID/downvote", (req, res, next) => {
-  Post.findByIdAndUpdate(req.params.postID, {
-    $inc: {
-      votes: -1,
+  Post.findByIdAndUpdate(
+    req.params.postID,
+    {
+      $inc: {
+        votes: -1,
+      },
     },
-  })
+    { new: true }
+  )
     .then((data) => res.json(data))
     .catch(next);
 });

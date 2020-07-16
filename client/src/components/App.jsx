@@ -7,11 +7,9 @@ function App() {
   let [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    const response = axios
-      .get("http://localhost:5000/api/posts")
-      .then((response) => {
-        setPosts(response.data);
-      });
+    axios.get("http://localhost:5000/api/posts").then((response) => {
+      setPosts(response.data);
+    });
   }, []);
 
   return (
