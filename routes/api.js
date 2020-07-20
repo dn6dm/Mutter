@@ -33,17 +33,21 @@ router.get("/posts/:postID", (req, res, next) => {
 
 // Add new comment
 router.patch("/posts/:postID/comment", (req, res, next) => {
-  Post.findByIdAndUpdate(
-    req.params.postID,
-    {
-      $push: {
-        comments: { body: req.body.comment, date: new Date() },
+  if (req.body.content) {
+    Post.findByIdAndUpdate(
+      req.params.postID,
+      {
+        $push: {
+          comments: { body: req.body.content, date: new Date() },
+        },
       },
-    },
-    { new: true }
-  )
-    .then((data) => res.json(data))
-    .catch(next);
+      { new: true }
+    )
+      .then((data) => res.json(data))
+      .catch(next);
+  } else {
+    res.send("Error: Empty comment");
+  }
 });
 
 // Upvote a post

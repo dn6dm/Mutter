@@ -11,7 +11,7 @@ function ListPost(props) {
         })
       ) : (
         <div className="col-12">
-          <h2>No posts yet</h2>
+          <h2>No Posts Yet</h2>
         </div>
       )}
     </div>

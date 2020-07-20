@@ -4,8 +4,7 @@ import axios from "axios";
 function Post(props) {
   const post = props.obj;
   let [votes, setVotes] = useState(post.votes);
-
-  function handleClick() {}
+  let link = "/posts/" + post._id;
 
   function upvote() {
     axios
@@ -24,11 +23,15 @@ function Post(props) {
   }
 
   return (
-    <div className="col-lg-6" onClick={handleClick}>
-      <h2>{post.content}</h2>
-      <button onClick={upvote} />
-      <p>{votes}</p>
-      <button onClick={downvote} />
+    <div className="col-lg-6">
+      <a href={link}>
+        <h2>{post.content}</h2>
+      </a>
+      <div>
+        <button onClick={upvote} />
+        <p>{votes}</p>
+        <button onClick={downvote} />
+      </div>
     </div>
   );
 }
