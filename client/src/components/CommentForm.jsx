@@ -5,10 +5,14 @@ function CommentForm(props) {
   let id = props.id;
   let [comment, setComment] = useState("");
 
-  function handleClick() {
-    axios.patch("http://localhost:5000/api/posts/" + id + "/comment", {
-      content: comment,
-    });
+  function handleClick(event) {
+    if (comment) {
+      axios.patch("http://localhost:5000/api/posts/" + id + "/comment", {
+        content: comment,
+      });
+    } else {
+      event.preventDefault();
+    }
   }
 
   function handleChange(event) {

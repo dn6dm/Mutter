@@ -1,0 +1,20 @@
+.PostForm {
+  background-color: #393e46;
+  color: #f8f9fa;
+  text-align: left;
+  padding: 2rem 5rem;
+}
+
+textarea {
+  resize: none;
+}
+
+.form-control {
+  font-size: 2rem;
+  margin: 1rem auto;
+}
+
+.btn-block {
+  margin: 1rem auto;
+  font-size: 1.5rem;
+}

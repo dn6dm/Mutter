@@ -4,7 +4,7 @@ const Post = require("../models/post");
 
 // Get all posts
 router.get("/posts", (req, res, next) => {
-  Post.find({})
+  Post.find({}, null, { sort: { time: -1 } })
     .then((data) => res.json(data))
     .catch(next);
 });

@@ -5,6 +5,7 @@ import PostPage from "./PostPage";
 import PostForm from "./PostForm";
 import axios from "axios";
 import { Route, Switch } from "react-router-dom";
+import "./App.css";
 
 function App() {
   let [posts, setPosts] = useState([]);
@@ -17,7 +18,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Mutter</h1>
+      <a href="/">
+        <h1>Mutter</h1>
+      </a>
       <Switch>
         <Route exact path="/">
           <PostForm />
