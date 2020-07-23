@@ -7,13 +7,11 @@ function ListPost(props) {
   return (
     <div className="container-fluid ListPost">
       <div className="row">
-        {posts && posts.length > 0 ? (
-          posts.map((post) => {
-            return <Post obj={post} key={post._id} />;
-          })
-        ) : (
-          <h2>No Posts Yet</h2>
-        )}
+        {posts && posts.length > 0
+          ? posts.map((post) => {
+              return <Post obj={post} key={post._id} />;
+            })
+          : null}
       </div>
     </div>
   );

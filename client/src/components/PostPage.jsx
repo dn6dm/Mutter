@@ -15,7 +15,7 @@ function PostPage(props) {
       setPost(response.data);
       setVotes(response.data.votes);
     });
-  }, []);
+  }, [id]);
 
   function upvote() {
     axios
@@ -35,7 +35,7 @@ function PostPage(props) {
 
   function createComment(comment) {
     return (
-      <div className="comment-wrapper col-12">
+      <div className="comment-wrapper col-12" key={comment._id}>
         <h5>{comment.body}</h5>
       </div>
     );
@@ -66,7 +66,7 @@ function PostPage(props) {
       </div>
     );
   } else {
-    return <h1></h1>;
+    return null;
   }
 }
 
