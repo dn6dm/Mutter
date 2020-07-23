@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import CommentForm from "./CommentForm";
+import "./PostPage.css";
 
 function PostPage(props) {
   let id = props.match.params.postID;
@@ -33,21 +34,37 @@ function PostPage(props) {
   }
 
   function createComment(comment) {
-    return <p>{comment.body}</p>;
+    return (
+      <div className="comment-wrapper col-12">
+        <h5>{comment.body}</h5>
+      </div>
+    );
   }
 
   if (post) {
     return (
       <div>
-        <a href="/">Back</a>
-        <h2>{post.content}</h2>
-        <div>
-          <button onClick={upvote} />
-          <p>{votes}</p>
-          <button onClick={downvote} />
+        <div className="PostPage row">
+          <div className="col-12">
+            <div className="row PostPage-post">
+              <div className="col-11">
+                <h2>{post.content}</h2>
+              </div>
+              <div className="col-1">
+                <div>
+                  <button className="fas fa-angle-up fa-2x" onClick={upvote} />
+                  <p>{votes}</p>
+                  <button
+                    className="fas fa-angle-down fa-2x"
+                    onClick={downvote}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          {post.comments.map(createComment)}
+          <CommentForm id={id} />
         </div>
-        {post.comments.map(createComment)}
-        <CommentForm id={id} />
       </div>
     );
   } else {

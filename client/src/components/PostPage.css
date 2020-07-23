@@ -1,0 +1,36 @@
+.PostPage {
+  margin: 1rem 5rem;
+  text-align: center;
+}
+
+.PostPage h2 {
+  text-align: left;
+}
+
+.PostPage h5 {
+  color: #f8f9fa;
+  text-align: left;
+}
+
+.PostPage-post {
+  background-color: #393e46;
+  border-radius: 5px;
+  color: #32e0c4;
+  padding: 3rem 1rem;
+  margin-bottom: 3rem;
+}
+
+.PostPage p {
+  margin: 1rem auto;
+}
+
+.comment-wrapper {
+  border: 1px solid #4f545c;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+  padding: 1.5rem;
+}
+
+.PostPage-post button {
+  color: gray;
+}

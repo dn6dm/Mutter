@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./CommentForm.css";
 
 function CommentForm(props) {
   let id = props.id;
@@ -21,9 +22,17 @@ function CommentForm(props) {
   }
 
   return (
-    <form onSubmit={handleClick}>
-      <input onChange={handleChange} type="text" value={comment} />
-      <button type="submit">Submit</button>
+    <form className="CommentForm col-12" onSubmit={handleClick}>
+      <textarea
+        className="form-control"
+        onChange={handleChange}
+        type="text"
+        value={comment}
+        rows="3"
+      ></textarea>
+      <button type="submit" className="btn btn-block">
+        Comment
+      </button>
     </form>
   );
 }

@@ -30,7 +30,7 @@ function PostForm() {
           value={newPost}
           rows="5"
         ></textarea>
-        <button type="submit" className="btn btn-light btn-block">
+        <button type="submit" className="btn btn-block">
           Post
         </button>
       </form>

@@ -1,37 +1,36 @@
-.PostForm {
-  /* background-color: #393e46; */
-  color: #f8f9fa;
-  text-align: left;
-  padding: 2rem 5rem;
+.CommentForm {
+  padding: 0;
 }
 
-.PostForm textarea {
+.CommentForm textarea {
   background-color: #393e46;
-  border: none;
+  border: 1px solid #4f545c;
   color: #f8f9fa;
   resize: none;
 }
 
-.PostForm textarea:focus {
+.CommentForm textarea:focus {
   background-color: #393e46;
+  border-color: #4f545c;
   box-shadow: none;
   color: #f8f9fa;
 }
 
-.PostForm .form-control {
+.CommentForm .form-control {
   font-size: 2rem;
-  margin: 1rem auto;
+  margin: 1rem 0;
+  width: 100%;
 }
 
-.PostForm .btn-block {
+.CommentForm .btn-block {
   background-color: #393e46;
   border: 1px solid #4f545c;
   color: #f8f9fa;
-  margin: 1rem auto;
+  margin: 1rem 0;
   font-size: 1.5rem;
 }
 
-.PostForm .btn-block:hover {
+.CommentForm .btn-block:hover {
   background-color: #4f545c;
   border-color: #808080;
 }
