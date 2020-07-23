@@ -6,6 +6,22 @@
   min-height: 300px;
 }
 
+@media (max-width: 1500px) {
+  .Post {
+    margin: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .Post {
+    margin-left: 1.5rem 0rem;
+  }
+  .col-lg-6 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .Vote {
   margin-top: 3rem;
 }

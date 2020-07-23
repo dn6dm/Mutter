@@ -9,6 +9,18 @@ h1 {
   text-align: left;
 }
 
+@media (max-width: 1500px) {
+  h1 {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  h1 {
+    margin-left: 1rem;
+  }
+}
+
 .header {
   color: inherit;
 }

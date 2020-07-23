@@ -47,18 +47,16 @@ function PostPage(props) {
         <div className="PostPage row">
           <div className="col-12">
             <div className="row PostPage-post">
-              <div className="col-11">
+              <div className="col-lg-11 col-10">
                 <h2>{post.content}</h2>
               </div>
-              <div className="col-1">
-                <div>
-                  <button className="fas fa-angle-up fa-2x" onClick={upvote} />
-                  <p>{votes}</p>
-                  <button
-                    className="fas fa-angle-down fa-2x"
-                    onClick={downvote}
-                  />
-                </div>
+              <div className="col-lg-1 col-2">
+                <button className="fas fa-angle-up fa-2x" onClick={upvote} />
+                <p>{votes}</p>
+                <button
+                  className="fas fa-angle-down fa-2x"
+                  onClick={downvote}
+                />
               </div>
             </div>
           </div>

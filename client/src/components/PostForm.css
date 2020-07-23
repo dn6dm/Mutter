@@ -5,6 +5,18 @@
   padding: 2rem 5rem;
 }
 
+@media (max-width: 1500px) {
+  .PostForm {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .PostForm {
+    padding: 1.5rem 1rem;
+  }
+}
+
 .PostForm textarea {
   background-color: #393e46;
   border: none;
