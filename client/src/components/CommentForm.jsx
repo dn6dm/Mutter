@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import API from "../utils/API.js";
 import "./CommentForm.css";
 
 function CommentForm(props) {
@@ -8,7 +8,7 @@ function CommentForm(props) {
 
   function handleClick(event) {
     if (comment) {
-      axios.patch("http://localhost:5000/api/posts/" + id + "/comment", {
+      API.patch("/" + id + "/comment", {
         content: comment,
       });
     } else {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import API from "../utils/API.js";
 import "./Post.css";
 
 function Post(props) {
@@ -8,19 +8,15 @@ function Post(props) {
   let link = "/posts/" + post._id;
 
   function upvote() {
-    axios
-      .patch("http://localhost:5000/api/posts/" + post._id + "/upvote")
-      .then((response) => {
-        setVotes(response.data.votes);
-      });
+    API.patch("/" + post._id + "/upvote").then((response) => {
+      setVotes(response.data.votes);
+    });
   }
 
   function downvote() {
-    axios
-      .patch("http://localhost:5000/api/posts/" + post._id + "/downvote")
-      .then((response) => {
-        setVotes(response.data.votes);
-      });
+    API.patch("/" + post._id + "/downvote").then((response) => {
+      setVotes(response.data.votes);
+    });
   }
 
   return (

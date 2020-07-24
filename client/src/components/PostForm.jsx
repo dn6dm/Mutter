@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import API from "../utils/API.js";
 import "./PostForm.css";
 
 function PostForm() {
@@ -7,7 +7,7 @@ function PostForm() {
 
   function handleClick(event) {
     if (newPost) {
-      axios.post("http://localhost:5000/api/posts", {
+      API.post("/", {
         content: newPost,
       });
     } else {

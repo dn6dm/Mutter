@@ -3,15 +3,15 @@ import "./App.css";
 import ListPost from "./ListPost";
 import PostPage from "./PostPage";
 import PostForm from "./PostForm";
-import axios from "axios";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
+import API from "../utils/API.js";
 
 function App() {
   let [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/posts").then((response) => {
+    API.get("/").then((response) => {
       setPosts(response.data);
     });
   }, []);

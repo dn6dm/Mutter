@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import axios from "axios";
+import API from "../utils/API.js";
 import { useState, useEffect } from "react";
 import CommentForm from "./CommentForm";
 import "./PostPage.css";
@@ -11,26 +11,22 @@ function PostPage(props) {
   let [votes, setVotes] = useState();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/posts/" + id).then((response) => {
+    API.get("/" + id).then((response) => {
       setPost(response.data);
       setVotes(response.data.votes);
     });
   }, [id]);
 
   function upvote() {
-    axios
-      .patch("http://localhost:5000/api/posts/" + id + "/upvote")
-      .then((response) => {
-        setVotes(response.data.votes);
-      });
+    API.patch("/" + id + "/upvote").then((response) => {
+      setVotes(response.data.votes);
+    });
   }
 
   function downvote() {
-    axios
-      .patch("http://localhost:5000/api/posts/" + id + "/downvote")
-      .then((response) => {
-        setVotes(response.data.votes);
-      });
+    API.patch("/" + id + "/downvote").then((response) => {
+      setVotes(response.data.votes);
+    });
   }
 
   function createComment(comment) {
