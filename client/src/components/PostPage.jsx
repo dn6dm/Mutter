@@ -11,10 +11,16 @@ function PostPage(props) {
   let [votes, setVotes] = useState();
 
   useEffect(() => {
-    API.get("/" + id).then((response) => {
-      setPost(response.data);
-      setVotes(response.data.votes);
-    });
+    API.get("/" + id)
+      .then((response) => {
+        if (response.data) {
+          setPost(response.data);
+          setVotes(response.data.votes);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, [id]);
 
   function upvote() {
@@ -62,7 +68,7 @@ function PostPage(props) {
       </div>
     );
   } else {
-    return null;
+    return <h1>Sorry, that post does not exist.</h1>;
   }
 }
 

@@ -18,19 +18,19 @@ function App() {
 
   return (
     <div className="App">
+      <a className="header" href="/">
+        <h1>Mutter</h1>
+      </a>
       <Switch>
         <Route exact path="/">
-          <a className="header" href="/">
-            <h1>Mutter</h1>
-          </a>
           <PostForm />
           <ListPost posts={posts} />
         </Route>
         <Route path="/posts/:postID">
-          <a className="header" href="/">
-            <h1>Mutter</h1>
-          </a>
           <PostPage />
+        </Route>
+        <Route>
+          <h1>Sorry, that page does not exist.</h1>
         </Route>
       </Switch>
     </div>
