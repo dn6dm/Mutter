@@ -33,6 +33,9 @@ function App() {
           <h1>Sorry, that page does not exist.</h1>
         </Route>
       </Switch>
+      <footer>
+        <h6>© Dan Nguyen 2020</h6>
+      </footer>
     </div>
   );
 }
